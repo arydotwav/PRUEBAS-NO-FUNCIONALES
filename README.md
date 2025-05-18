@@ -32,7 +32,7 @@ Las pruebas de seguridad evalúan y determinan si una aplicación puede ser **re
 - Cumplimiento de normativas legales.
 - Protección frente a daños ya sean económicos o reputacionales.
 
-📷 *Imagen*:
+📷 *Ejemplo Visual*:
 ![Tipos de ataques maliciosos](https://www.fortinet.com/content/dam/fortinet/images/cyberglossary/types-of-cyberattacks.png)
 > Ejemplos de los tipos de ataques maliciosos que se pueden encontrar
 ---
@@ -72,7 +72,7 @@ La escalabilidad analiza si el sistema puede **manejar un aumento en la carga de
 - Optimiza el uso de recursos (CPU, memoria, red, etc).
 
 📷 *Ejemplo visual*:
-![Ejemplo escalabilidad](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-iKBmLEVtKMj624F9rtOGFaA7O8l5fMEGsg&s)
+![Ejemplo escalabilidad](https://www.loadview-testing.com/wp-content/uploads/load-testing-loadview.png)
 > Simulación de usuarios simultáneos con JMeter
 
 ---
