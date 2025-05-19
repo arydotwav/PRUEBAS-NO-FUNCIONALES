@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas No Funcionales - Beneficios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #6b46c1 0%, #4299e1 100%);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .tooltip {
+            position: relative;
+        }
+        
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: #4a5568;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-flask text-2xl"></i>
+                    <span class="font-semibold text-xl">Pruebas No Funcionales</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#que-son" class="hover:text-gray-200">¿Qué son?</a>
+                    <a href="#beneficios" class="hover:text-gray-200">Beneficios</a>
+                    <a href="#importancia" class="hover:text-gray-200">Importancia</a>
+                    <a href="#herramientas" class="hover:text-gray-200">Herramientas</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">🧪 Pruebas No Funcionales</h1>
+                <p class="text-xl md:text-2xl mb-8">Evaluando la calidad más allá de la funcionalidad</p>
+                <p class="text-lg opacity-90">Descubre cómo las pruebas no funcionales aseguran que tu aplicación no solo funcione, sino que funcione bien bajo cualquier circunstancia.</p>
+                <div class="mt-10">
+                    <a href="#que-son" class="bg-white text-indigo-700 font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300 inline-block">
+                        Explorar más <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué son -->
+    <section id="que-son" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">📌 ¿Qué son las pruebas no funcionales?</h2>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 p-8 rounded-xl shadow-md">
+                        <p class="text-lg text-gray-700 mb-6">
+                            Las pruebas no funcionales son un tipo de prueba de software que <span class="font-semibold text-indigo-600">evalúan el rendimiento, la usabilidad, la seguridad y otros aspectos técnicos</span> que no siempre están directamente relacionados con las funciones específicas de la aplicación.
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            Mientras que las <span class="font-semibold text-indigo-600">pruebas funcionales</span> verifican <span class="italic">qué</span> hace un sistema, las <span class="font-semibold text-indigo-600">pruebas no funcionales</span> analizan <span class="italic">cómo</span> lo hace.
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-indigo-50 p-8 rounded-xl border-2 border-indigo-100 relative">
+                        <div class="absolute -top-5 -left-5 bg-indigo-600 text-white p-3 rounded-full">
+                            <i class="fas fa-lightbulb text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-indigo-800 mb-4">Ejemplo práctico</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-semibold">Prueba funcional:</span> Verificar que el botón "Guardar" almacena los datos del formulario.</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-semibold">Prueba no funcional:</span> Verificar cuánto tiempo tarda en guardar los datos o si funciona igual de rápido con 1000 usuarios simultáneos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section id="beneficios" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">✅ Beneficios clave de las pruebas no funcionales</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explora los principales tipos de pruebas no funcionales y sus beneficios</p>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Seguridad -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="bg-red-500 p-4 text-white">
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold">Seguridad</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">Evalúa si una aplicación puede ser <span class="font-semibold">resistente a ataques maliciosos</span> y protege adecuadamente los datos sensibles.</p>
+                        <div class="bg-red-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-semibold text-red-700 mb-2">¿Por qué es importante?</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                <li>Evita robos de información personal</li>
+                                <li>Detecta vulnerabilidades como inyecciones SQL</li>
+                                <li>Define controles de acceso</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-700 mb-2">Beneficios:</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                <li>Mayor confianza del usuario</li>
+                                <li>Cumplimiento de normativas legales</li>
+                                <li>Protección económica y reputacional</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portabilidad -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="bg-blue-500 p-4 text-white">
+                        <div class="flex items-center">
+                            <i class="fas fa-mobile-alt text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold">Portabilidad</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">Verifica si una aplicación <span class="font-semibold">funciona correctamente en diferentes entornos/dispositivos</span>.</p>
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-semibold text-blue-700 mb-2">¿Por qué es importante?</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                <li>Usuarios con distintos dispositivos</li>
+                                <li>Funcionamiento consistente en todos lados</li>
+                                <li>Facilita migraciones futuras</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-700 mb-2">Beneficios:</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                <li>Mayor alcance de usuarios</li>
+                                <li>Ahorro en soporte técnico</li>
+                                <li>Menor riesgo en cambios de plataforma</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Escalabilidad -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="bg-purple-500 p-4 text-white">
+                        <div class="flex items-center">
+                            <i class="fas fa-chart-line text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold">Escalabilidad</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">Analiza si el sistema puede <span class="font-semibold">manejar un aumento en la carga de trabajo</span> sin colapsar.</p>
+                        <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-semibold text-purple-700 mb-2">¿Por qué es importante?</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                <li>Las aplicaciones crecen con el tiempo</li>
+                                <li>Eventos especiales generan picos de tráfico</li>
+                                <li>Mal rendimiento afecta ventas y reputación</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-700 mb-2">Beneficios:</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                <li>Permite crecer sin rehacer el sistema</li>
+                                <li>Preparación frente a imprevistos</li>
+                                <li>Optimiza uso de recursos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accesibilidad -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="bg-yellow-500 p-4 text-white">
+                        <div class="flex items-center">
+                            <i class="fas fa-universal-access text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold">Accesibilidad</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">Evalúa qué tan fácil es para <span class="font-semibold">todas las personas</span> —incluyendo aquellas con discapacidades— utilizar el sistema.</p>
+                        <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-semibold text-yellow-700 mb-2">¿Por qué es importante?</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                <li>Millones de personas con discapacidades</li>
+                                <li>Derecho fundamental y ventaja competitiva</li>
+                                <li>Exigencias legales en muchos países</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-700 mb-2">Beneficios:</h4>
+                            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                <li>Aplicación inclusiva y ética</li>
+                                <li>Mejora la experiencia para todos</li>
+                                <li>Cumplimiento legal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ejemplos visuales -->
+            <div class="mt-16 grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-shield-alt text-red-500 mr-3"></i> Ejemplo de Seguridad
+                    </h3>
+                    <img src="https://www.fortinet.com/content/dam/fortinet/images/cyberglossary/types-of-cyberattacks.png" alt="Tipos de ataques maliciosos" class="w-full rounded-lg mb-4">
+                    <p class="text-gray-700">Diferentes tipos de ataques maliciosos que las pruebas de seguridad pueden ayudar a prevenir.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-mobile-alt text-blue-500 mr-3"></i> Ejemplo de Portabilidad
+                    </h3>
+                    <img src="https://cdn-www.stelorder.com/wp-content/uploads/2024/02/app-para-organizar-tareas-any.do_.png" alt="Compatibilidad multiplataforma" class="w-full rounded-lg mb-4">
+                    <p class="text-gray-700">La misma aplicación funcionando correctamente en múltiples dispositivos y plataformas.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-chart-line text-purple-500 mr-3"></i> Ejemplo de Escalabilidad
+                    </h3>
+                    <img src="https://www.loadview-testing.com/wp-content/uploads/load-testing-loadview.png" alt="Pruebas de carga" class="w-full rounded-lg mb-4">
+                    <p class="text-gray-700">Simulación de usuarios simultáneos para probar la escalabilidad del sistema.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-universal-access text-yellow-500 mr-3"></i> Ejemplo de Accesibilidad
+                    </h3>
+                    <img src="https://lh3.googleusercontent.com/tSHcpuokmtjQFdWaKFYGCrQ-WNCi746CrfBRKV0eiqJxKSp9zdkBz55g_QZIrr2w_cPnqUtAcJRuql1npR0mzEYQEIE=s1280-w1280-h800" alt="Herramientas de accesibilidad" class="w-full rounded-lg mb-4">
+                    <p class="text-gray-700">Chequeo automático de accesibilidad con herramientas especializadas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparativa -->
+    <section class="py-16 bg-indigo-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">🧪 Comparativa general</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Diferencias clave entre pruebas funcionales y no funcionales</p>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto"></div>
+            </div>
+            
+            <div class="overflow-x-auto bg-white rounded-xl shadow-md">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-indigo-600 text-white">
+                        <tr>
+                            <th class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">Tipo de prueba</th>
+                            <th class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">¿Qué evalúa?</th>
+                            <th class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">Ejemplo práctico</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Funcional</td>
+                            <td class="px-6 py-4 text-gray-700">¿El sistema hace lo que se supone?</td>
+                            <td class="px-6 py-4 text-gray-700">El botón "registrarse" guarda los datos</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">No funcional - Seguridad</td>
+                            <td class="px-6 py-4 text-gray-700">¿Protege los datos y acceso?</td>
+                            <td class="px-6 py-4 text-gray-700">El sistema bloquea intentos de hacking</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">No funcional - Portabilidad</td>
+                            <td class="px-6 py-4 text-gray-700">¿Funciona en distintos entornos?</td>
+                            <td class="px-6 py-4 text-gray-700">El sitio se ve bien en Chrome, Firefox y móvil</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">No funcional - Escalabilidad</td>
+                            <td class="px-6 py-4 text-gray-700">¿Soporta el crecimiento?</td>
+                            <td class="px-6 py-4 text-gray-700">5.000 personas usan la app sin caídas</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">No funcional - Accesibilidad</td>
+                            <td class="px-6 py-4 text-gray-700">¿Todos la pueden usar?</td>
+                            <td class="px-6 py-4 text-gray-700">Usuarios ciegos pueden navegar sin problema</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Importancia -->
+    <section id="importancia" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">🎯 ¿Por qué son importantes las pruebas no funcionales?</h2>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-indigo-100 p-8 rounded-xl mb-8">
+                    <p class="text-lg text-gray-800 mb-6">
+                        Porque al final del día, te aseguran que la aplicación no solo <span class="font-semibold text-indigo-700">funcione</span>, sino que funcione <span class="font-semibold text-indigo-700">bien</span>, incluso cuando las cosas se ponen al límite.
+                    </p>
+                    <p class="text-lg text-gray-800">
+                        Muchas veces, una app puede parecer perfecta durante las pruebas básicas, pero cuando la empieza a usar mucha gente o cuando se hacen conexiones desde distintos dispositivos... ahí es donde empiezan los problemas.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-exclamation-triangle text-red-500 mr-3"></i> Riesgos sin pruebas no funcionales
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="bg-red-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-times text-red-500"></i>
+                                </div>
+                                <p class="text-gray-700">Funcionar bien en teoría, pero ser lenta o poco confiable en la práctica</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-red-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-times text-red-500"></i>
+                                </div>
+                                <p class="text-gray-700">Caerse cuando muchas personas la usan al mismo tiempo</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-red-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-times text-red-500"></i>
+                                </div>
+                                <p class="text-gray-700">No ser segura y quedar expuesta a ataques</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-red-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-times text-red-500"></i>
+                                </div>
+                                <p class="text-gray-700">No poder ser utilizada por personas con diversas discapacidades</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i> Beneficios de implementarlas
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="bg-green-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="text-gray-700">Ahorro de dinero y problemas a largo plazo</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-green-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="text-gray-700">Mejor experiencia de usuario en todas las situaciones</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-green-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="text-gray-700">Cumplimiento de normativas y estándares</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-green-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="text-gray-700">Ventaja competitiva en el mercado</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-12 bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-lightbulb text-yellow-500 text-2xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <span class="font-semibold">Consejo profesional:</span> Realizar pruebas no funcionales <span class="font-semibold">antes de lanzar</span> o <span class="font-semibold">durante el desarrollo</span> es una inversión que ahorra dinero y problemas de cabeza a largo plazo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Herramientas -->
+    <section id="herramientas" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">🛠️ Herramientas recomendadas</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Para implementar pruebas no funcionales en tus proyectos</p>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="bg-red-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Seguridad</h3>
+                    <p class="text-gray-600 mb-4">OWASP ZAP</p>
+                    <div class="tooltip inline-block">
+                        <i class="fas fa-info-circle text-indigo-500 cursor-pointer"></i>
+                        <span class="tooltip-text">Herramienta de seguridad de código abierto para encontrar vulnerabilidades</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-mobile-alt text-blue-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Portabilidad</h3>
+                    <p class="text-gray-600 mb-4">BrowserStack</p>
+                    <div class="tooltip inline-block">
+                        <i class="fas fa-info-circle text-indigo-500 cursor-pointer"></i>
+                        <span class="tooltip-text">Plataforma para probar aplicaciones en diferentes navegadores y dispositivos</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="bg-purple-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-purple-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Escalabilidad</h3>
+                    <p class="text-gray-600 mb-4">Apache JMeter</p>
+                    <div class="tooltip inline-block">
+                        <i class="fas fa-info-circle text-indigo-500 cursor-pointer"></i>
+                        <span class="tooltip-text">Herramienta para pruebas de carga y medición de rendimiento</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="bg-yellow-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-universal-access text-yellow-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Accesibilidad</h3>
+                    <p class="text-gray-600 mb-4">axe-core, Lighthouse</p>
+                    <div class="tooltip inline-block">
+                        <i class="fas fa-info-circle text-indigo-500 cursor-pointer"></i>
+                        <span class="tooltip-text">Herramientas para evaluar y mejorar la accesibilidad web</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusión -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
+                    <i class="fas fa-quote-left text-3xl text-white opacity-30 mb-4"></i>
+                    <p class="text-xl md:text-2xl mb-6">
+                        Una app completa no solo hace su tarea, sino que hace la misma bajo presión, sin errores (en un mundo perfecto), y pensando en <span class="font-semibold">todos</span> los usuarios. Las pruebas no funcionales nos ayudan a garantizar eso.
+                    </p>
+                    <div class="flex items-center justify-center space-x-2">
+                        <i class="fas fa-heart text-red-300"></i>
+                        <i class="fas fa-hands-helping text-yellow-300"></i>
+                    </div>
+                </div>
+                <div class="mt-12">
+                    <a href="#que-son" class="bg-white text-indigo-700 font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300 inline-block">
+                        <i class="fas fa-arrow-up mr-2"></i> Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-flask text-xl"></i>
+                        <span class="font-semibold">Pruebas No Funcionales</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-2">Evaluando la calidad más allá de la funcionalidad</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>© 2023 Pruebas No Funcionales. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating action button -->
+    <div class="fixed bottom-8 right-8">
+        <button id="backToTop" class="bg-indigo-600 text-white p-4 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300 floating">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <script>
+        // Back to top button
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Show/hide back to top button based on scroll position
+        window.addEventListener('scroll', () => {
+            const backToTopButton = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        // Mobile menu toggle (if needed)
+        const mobileMenuButton = document.querySelector('.md\\:hidden');
+        // You would need to add the mobile menu functionality if needed
+    </script>
+</body>
+</html>
